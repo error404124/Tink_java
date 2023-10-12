@@ -1,6 +1,9 @@
 package edu.hw1;
 
 public class Task4 {
+    private Task4() {
+    }
+
     public static String fixString(String str) {
         char symb;
         char[] chars = str.toCharArray();

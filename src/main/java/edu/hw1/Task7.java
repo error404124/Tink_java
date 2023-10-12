@@ -1,15 +1,19 @@
 package edu.hw1;
 
 public class Task7 {
+    private Task7() {
+    }
+
     public static int rotateRight(int n, int shift) {
         String binary = Integer.toBinaryString(n);
-        shift %= binary.length();
+        int copyShift = shift;
+        copyShift %= binary.length();
         String array = new String();
 
-        for (int i = binary.length() - shift; i < binary.length(); ++i) {
+        for (int i = binary.length() - copyShift; i < binary.length(); ++i) {
             array += binary.charAt(i);
         }
-        for (int i = 0; i < binary.length() - shift; ++i) {
+        for (int i = 0; i < binary.length() - copyShift; ++i) {
             array += binary.charAt(i);
         }
         int answer = Integer.parseInt(array, 2);
@@ -18,13 +22,14 @@ public class Task7 {
 
     public static int rotateLeft(int n, int shift) {
         String binary = Integer.toBinaryString(n);
-        shift %= binary.length();
+        int copyShift = shift;
+        copyShift %= binary.length();
         String array = new String();
 
-        for (int i = shift; i < binary.length(); ++i) {
+        for (int i = copyShift; i < binary.length(); ++i) {
             array += binary.charAt(i);
         }
-        for (int i = 0; i < shift; ++i) {
+        for (int i = 0; i < copyShift; ++i) {
             array += binary.charAt(i);
         }
         int answer = Integer.parseInt(array, 2);

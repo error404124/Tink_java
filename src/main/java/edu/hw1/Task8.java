@@ -1,6 +1,10 @@
 package edu.hw1;
 
 public class Task8 {
+    private Task8() {
+    }
+
+    @SuppressWarnings("MagicNumber")
     public static boolean knightBoardCapture(int[][] matrix) {
         for (int i = 0; i < matrix.length - 1; ++i) {
             for (int j = 0; j < matrix[0].length - 1; ++j) {

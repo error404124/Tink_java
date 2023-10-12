@@ -1,6 +1,10 @@
 package edu.hw1;
 
 public class Task5 {
+    private Task5() {
+    }
+
+    @SuppressWarnings("MagicNumber")
     public static boolean isPalindromeDescendant(int number) {
         int tmp = number;
         int revers = 0;
@@ -17,17 +21,18 @@ public class Task5 {
         return false;
     }
 
+    @SuppressWarnings("MagicNumber")
     public static int f(int number) {
-        int number_2 = 0;
+        int number2 = 0;
         int tmp = number;
         int i = 0;
         while (tmp != 0) {
-            number_2 += tmp % 10 * Math.pow(10, i);
+            number2 += tmp % 10 * Math.pow(10, i);
             tmp /= 10;
-            number_2 += tmp % 10 * Math.pow(10, i);
+            number2 += tmp % 10 * Math.pow(10, i);
             tmp /= 10;
             i++;
         }
-        return number_2;
+        return number2;
     }
 }

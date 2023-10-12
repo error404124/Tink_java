@@ -1,6 +1,10 @@
 package edu.hw1;
 
 public class Task1 {
+    private Task1() {
+    }
+
+    @SuppressWarnings("MagicNumber")
     public static int minutesToSeconds(String str) {
         char[] chars = str.toCharArray();
         int counter = 0;
