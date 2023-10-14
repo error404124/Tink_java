@@ -3,8 +3,8 @@ package edu.hw1;
 import java.util.Arrays;
 
 public class Task6 {
-    private static final int answer = 6174;
-    private static final int condition = 1000;
+    private static final int ANSWER = 6174;
+    private static final int CONDITION = 1000;
 
     private Task6() {
 
@@ -13,10 +13,10 @@ public class Task6 {
     @SuppressWarnings("MagicNumber")
     public static int k(int number) {
 
-        if (number <= condition) {
+        if (number <= CONDITION) {
             return -1;
         }
-        if (number == answer) {
+        if (number == ANSWER) {
             return 0;
         }
         int numb = 0;
