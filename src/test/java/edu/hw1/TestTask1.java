@@ -25,4 +25,16 @@ public class TestTask1 {
         int ans = 59999;
         assertThat(ans).isEqualTo(minutesToSeconds(str));
     }
+    @Test
+    void minutesToSeconds_test4() {
+        String str = "01:a0";
+        int ans = -1;
+        assertThat(ans).isEqualTo(minutesToSeconds(str));
+    }
+    @Test
+    void minutesToSeconds_test5() {
+        String str = "a1:00";
+        int ans = -1;
+        assertThat(ans).isEqualTo(minutesToSeconds(str));
+    }
 }

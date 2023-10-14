@@ -19,6 +19,7 @@ public class TestTask8 {
         boolean ans = true;
         assertThat(ans).isEqualTo(knightBoardCapture(desk));
     }
+
     @Test
     void knightBoardCapture_test2() {
         int[][] desk = new int[][] {
@@ -33,6 +34,7 @@ public class TestTask8 {
         boolean ans = false;
         assertThat(ans).isEqualTo(knightBoardCapture(desk));
     }
+
     @Test
     void knightBoardCapture_test3() {
         int[][] desk = new int[][] {
@@ -44,6 +46,36 @@ public class TestTask8 {
             {0, 0, 1, 0, 0, 0, 0, 1},
             {0, 1, 0, 0, 0, 0, 0, 0},
             {1, 1, 0, 0, 1, 0, 0, 0}};
+        boolean ans = false;
+        assertThat(ans).isEqualTo(knightBoardCapture(desk));
+    }
+
+    @Test
+    void knightBoardCapture_test4() {
+        int[][] desk = new int[][] {
+            {0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 1, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0}};
+        boolean ans = false;
+        assertThat(ans).isEqualTo(knightBoardCapture(desk));
+    }
+
+    @Test
+    void knightBoardCapture_test5() {
+        int[][] desk = new int[][] {
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0}};
         boolean ans = false;
         assertThat(ans).isEqualTo(knightBoardCapture(desk));
     }

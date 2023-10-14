@@ -7,14 +7,11 @@ public class Task4 {
     public static String fixString(String str) {
         char symb;
         char[] chars = str.toCharArray();
-        for (int i = 0; i < chars.length; i += 2) {
-            if (i + 2 <= chars.length) {
+        for (int i = 0; i + 2 <= chars.length; i += 2) {
                 symb = chars[i];
                 chars[i] = chars[i + 1];
                 chars[i + 1] = symb;
-            }
         }
-        String string = new String(chars);
-        return string;
+        return new String(chars);
     }
 }

@@ -5,10 +5,7 @@ public class Task3 {
     }
 
     public static boolean isNestable(int[] mass1, int[] mass2) {
-        if ((min(mass1) > min(mass2)) || ((max(mass1) < max(mass2)))) {
-            return true;
-        }
-        return false;
+        return (min(mass1) > min(mass2)) || ((max(mass1) < max(mass2)));
     }
 
     private static int min(int[] mass) {

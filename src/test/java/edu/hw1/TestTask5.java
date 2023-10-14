@@ -20,7 +20,13 @@ public class TestTask5 {
     @Test
     void isPalindromeDescendant_test3() {
         int number = 134;
-        boolean ans = false;
+        boolean ans = true;
+        assertThat(ans).isEqualTo(isPalindromeDescendant(number));
+    }
+    @Test
+    void isPalindromeDescendant_test4() {
+        int number = 1;
+        boolean ans = true;
         assertThat(ans).isEqualTo(isPalindromeDescendant(number));
     }
 

@@ -15,7 +15,7 @@ public class Task5 {
         }
         if (revers != number && number >= 10) {
             return isPalindromeDescendant(f(number));
-        } else if (revers == number && number > 10) {
+        } else if (revers == number) {
             return true;
         }
         return false;
@@ -27,9 +27,9 @@ public class Task5 {
         int tmp = number;
         int i = 0;
         while (tmp != 0) {
-            number2 += tmp % 10 * Math.pow(10, i);
+            number2 += (int) (tmp % 10 * Math.pow(10, i));
             tmp /= 10;
-            number2 += tmp % 10 * Math.pow(10, i);
+            number2 += (int) (tmp % 10 * Math.pow(10, i));
             tmp /= 10;
             i++;
         }
