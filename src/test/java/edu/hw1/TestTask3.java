@@ -13,10 +13,35 @@ public class TestTask3 {
         boolean ans = true;
         assertThat(ans).isEqualTo(isNestable(mass1, mass2));
     }
+
     @Test
     void isNestable_test2() {
         int[] mass1 = {1, 2, 3, 4};
         int[] mass2 = {2, 3};
+        boolean ans = false;
+        assertThat(ans).isEqualTo(isNestable(mass1, mass2));
+    }
+
+    @Test
+    void isNestable_test3() {
+        int[] mass1 = {};
+        int[] mass2 = {2, 3};
+        boolean ans = false;
+        assertThat(ans).isEqualTo(isNestable(mass1, mass2));
+    }
+
+    @Test
+    void isNestable_test4() {
+        int[] mass1 = {1, 2, 3, 4};
+        int[] mass2 = {};
+        boolean ans = false;
+        assertThat(ans).isEqualTo(isNestable(mass1, mass2));
+    }
+
+    @Test
+    void isNestable_test5() {
+        int[] mass1 = {};
+        int[] mass2 = {};
         boolean ans = false;
         assertThat(ans).isEqualTo(isNestable(mass1, mass2));
     }

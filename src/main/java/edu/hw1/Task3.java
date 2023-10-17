@@ -5,6 +5,9 @@ public class Task3 {
     }
 
     public static boolean isNestable(int[] mass1, int[] mass2) {
+        if (mass1.length == 0 || mass2.length == 0) {
+            return false;
+        }
         return (min(mass1) > min(mass2)) || ((max(mass1) < max(mass2)));
     }
 
