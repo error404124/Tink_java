@@ -14,7 +14,7 @@ public class Task5 {
             tmp /= 10;
         }
         if (revers != number && number >= 10) {
-            return isPalindromeDescendant(f(number));
+            return isPalindromeDescendant(pairReverse(number));
         } else if (revers == number) {
             return true;
         }
@@ -22,7 +22,7 @@ public class Task5 {
     }
 
     @SuppressWarnings("MagicNumber")
-    public static int f(int number) {
+    public static int pairReverse(int number) {
         int number2 = 0;
         int tmp = number;
         int i = 0;

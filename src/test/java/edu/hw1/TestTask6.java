@@ -23,4 +23,10 @@ public class TestTask6 {
         int ans = 0;
         assertThat(ans).isEqualTo(k(number_3));
     }
+    @Test
+    void K_test4() {
+        int number_3 = 1111;
+        int ans = -1;
+        assertThat(ans).isEqualTo(k(number_3));
+    }
 }

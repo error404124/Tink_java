@@ -37,4 +37,9 @@ public class TestTask1 {
         int ans = -1;
         assertThat(ans).isEqualTo(minutesToSeconds(str));
     }
+    @Test
+    void minutesToSeconds_test6() {
+        int ans = -1;
+        assertThat(ans).isEqualTo(minutesToSeconds(Integer.MAX_VALUE + ":00"));
+    }
 }
