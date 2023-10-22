@@ -1,9 +1,14 @@
 package edu.project1;
+
 import org.jetbrains.annotations.NotNull;
 
-interface Dictionary {
-    String[] words = {"Wednesday", "Statistics", "February", "Look", "Apple"};
-    @NotNull public default String randomWord(){
-        return words[(int) Math.round(Math.random() * (words.length - 1))].toLowerCase();
+public class Dictionary {
+    private Dictionary() {
+    }
+
+    static final String[] WORDS = {"Wednesday", "Statistics", "February", "Look", "Apple"};
+
+    @NotNull public static String randomWord() {
+        return WORDS[(int) Math.round(Math.random() * (WORDS.length - 1))].toLowerCase();
     }
 }

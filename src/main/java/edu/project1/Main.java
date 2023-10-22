@@ -1,27 +1,54 @@
 package edu.project1;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.Scanner;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public final class Main {
-    private final static Logger LOGGER = LogManager.getLogger();
-
     private Main() {
     }
 
+    @SuppressWarnings("RegexpSinglelineJava")
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        LOGGER.info("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 0; i <= 2; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            LOGGER.info("i = {}", i);
+        HangmanGame game = new HangmanGame();
+        char[] userWord = game.getUserWord();
+        if (userWord.length == 0) {
+            System.exit(0);
+        }
+        System.out.println(userWord);
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            if (!scanner.hasNextLine()) {
+                System.out.println("You give up!");
+                break;
+            }
+            String word = scanner.nextLine().toLowerCase();
+            if (word.length() != 1) {
+                System.out.println("Incorrect length, repeat input please!");
+                continue;
+            }
+            char letter = word.charAt(0);
+            if (!game.checkLetter(letter)) {
+                System.out.println("Invalid input, repeat please!");
+                continue;
+            }
+            if (game.rightLetter(letter)) {
+                System.out.println("Hit!");
+                System.out.println(game.replaceLetter(letter));
+                if (game.gameWin()) {
+                    System.out.println("You win!");
+                    break;
+                } else {
+                    System.out.println("Game continue!");
+                }
+            } else {
+                System.out.println(
+                    "Missed, mistake" + " " + game.getCounterMistakes() + " " + "out of" + " " + game.getMaxMistakes());
+                System.out.println(game.getUserWord());
+                if (game.gameLoose()) {
+                    System.out.println("You loose!");
+                    break;
+                }
+            }
         }
     }
 }
+
