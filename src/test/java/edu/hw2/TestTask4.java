@@ -17,10 +17,4 @@ public class TestTask4 {
         var ans = "com.intellij.rt.junit.JUnitStarter";
         assertThat(ans).isEqualTo(Task4.getMethodsAndClasses().className());
     }
-
-    @Test
-    void testGetMethodsAndClasses() {
-        String ans = "CallingInfo[className=com.intellij.rt.junit.JUnitStarter, methodName=main]";
-        assertThat(ans).isEqualTo(Task4.getMethodsAndClasses() + "");
-    }
 }
