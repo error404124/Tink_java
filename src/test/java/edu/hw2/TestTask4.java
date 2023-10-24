@@ -7,13 +7,13 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class TestTask4 {
     @Test
     void test1() {
-        String ans = "CallingInfo[className=com.intellij.rt.junit.JUnitStarter, methodName=main]";
+        String ans = "CallingInfo[className=org.apache.maven.surefire.booter.ForkedBooter, methodName=main]";
         assertThat(ans).isEqualTo(Task4.getMethodsAndClasses() + "");
     }
 
     @Test
     void test2() {
-        String ans = "com.intellij.rt.junit.JUnitStarter";
+        String ans = "org.apache.maven.surefire.booter.ForkedBooter";
         assertThat(ans).isEqualTo(Task4.getMethodsAndClasses().className());
     }
 
