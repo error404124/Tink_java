@@ -1,6 +1,8 @@
 package edu.hw2.Task4;
 
 public class Task4 {
+    static final int NUMBER = 2;
+
     private Task4() {
 
     }
@@ -9,8 +11,8 @@ public class Task4 {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         String className;
         String methodName;
-        className = stackTraceElements[stackTraceElements.length - 1].getClassName();
-        methodName = stackTraceElements[stackTraceElements.length - 1].getMethodName();
+        className = stackTraceElements[NUMBER].getClassName();
+        methodName = stackTraceElements[NUMBER].getMethodName();
         return new CallingInfo(className, methodName);
     }
 
