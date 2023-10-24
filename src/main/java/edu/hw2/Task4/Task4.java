@@ -5,17 +5,13 @@ public class Task4 {
 
     }
 
-    static StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-
     public static CallingInfo getMethodsAndClasses() {
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         String className;
         String methodName;
-        for (int i = stackTraceElements.length - 1; i >= 2; --i) {
-            className = stackTraceElements[i].getClassName();
-            methodName = stackTraceElements[i].getMethodName();
-            return new CallingInfo(className, methodName);
-        }
-        return null;
+        className = stackTraceElements[stackTraceElements.length - 1].getClassName();
+        methodName = stackTraceElements[stackTraceElements.length - 1].getMethodName();
+        return new CallingInfo(className, methodName);
     }
 
     public record CallingInfo(String className, String methodName) {
