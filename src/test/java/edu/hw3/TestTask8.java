@@ -8,7 +8,7 @@ import java.util.List;
 public class TestTask8 {
     @Test
     void BackwardIteratorTest1() {
-        BackwardIterator<Object> a = new BackwardIterator<>(List.of(1, 2));
+        BackwardIterator<Object> a = new BackwardIterator<>(List.of(1, 2, 3));
         int answer = 3;
         assertThat(answer).isEqualTo(a.next());
     }
