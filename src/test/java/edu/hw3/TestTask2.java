@@ -34,4 +34,10 @@ public class TestTask2 {
         String[] answer = {};
         assertThat(answer).isEqualTo(Task2.clusterize(array));
     }
+    @Test
+    void clusterizeTest6() {
+        String array = ")(";
+        String[] answer = null;
+        assertThat(answer).isEqualTo(Task2.clusterize(array));
+    }
 }

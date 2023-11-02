@@ -2,6 +2,7 @@ package edu.hw3.Task8;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class BackwardIterator<T> implements Iterator<Object> {
     private final List<T> arr;
@@ -24,7 +25,7 @@ public class BackwardIterator<T> implements Iterator<Object> {
             index--;
             return element;
         } else {
-            return null;
+            throw new NoSuchElementException();
         }
     }
 }

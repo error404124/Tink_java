@@ -3,7 +3,9 @@ package edu.hw3;
 import edu.hw3.Task8.BackwardIterator;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class TestTask8 {
     @Test
@@ -30,8 +32,7 @@ public class TestTask8 {
     @Test
     void BackwardIteratorTest4() {
         BackwardIterator<Object> a = new BackwardIterator<>(List.of());
-        Boolean answer = null;
-        assertThat(answer).isEqualTo(a.next());
+        assertThrows(NoSuchElementException.class, () -> a.next());
     }
 
     @Test

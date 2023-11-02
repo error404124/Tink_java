@@ -10,7 +10,7 @@ public class Task5 {
     private Task5() {
     }
 
-    public static List<String> parseContacts(List<String> persons, String condition) {
+    public static List<Person> parseContacts(List<Person> persons, String condition) {
         if (persons == null) {
             return null;
         }
@@ -24,12 +24,12 @@ public class Task5 {
         }
     }
 
-    public static class PersonComaparator implements Comparator<String> {
-        public int compare(String person1, String person2) {
-            String[] str1 = person1.split(SPACE);
-            String[] str2 = person2.split(SPACE);
+    public static class PersonComaparator implements Comparator<Person> {
+        public int compare(Person person1, Person person2) {
+            String[] str1 = person1.toString().split(SPACE);
+            String[] str2 = person2.toString().split(SPACE);
             if (str1.length < 2 || str2.length < 2) {
-                return person1.compareTo(person2);
+                return person1.toString().compareTo(person2.toString());
             } else {
                 int result = str1[1].compareTo(str2[1]);
                 if (result == 0) {
@@ -39,5 +39,8 @@ public class Task5 {
                 }
             }
         }
+    }
+
+    record Person(String fullName) {
     }
 }

@@ -4,9 +4,11 @@ public class Task1 {
     private Task1() {
     }
 
-    public static String atbash(String array) {
-        char[] copyArray = array.toCharArray();
-        StringBuilder answer = new StringBuilder();
+    static final int ALPHABET = 27;
+
+    public static String atbash(String str) {
+        char[] copyArray = str.toCharArray();
+        StringBuilder answer = new StringBuilder(ALPHABET);
         for (char symbol : copyArray) {
             if (Character.isLetter(symbol)) {
                 if (Character.isUpperCase(symbol)) {

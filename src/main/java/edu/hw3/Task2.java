@@ -13,10 +13,13 @@ public class Task2 {
         StringBuilder answer = new StringBuilder();
         for (int i = 0; i < array.length(); ++i) {
             if (array.charAt(i) == ')') {
-                ++counter;
+                --counter;
+                if (counter < 0) {
+                    return null;
+                }
                 answer.append(array.charAt(i));
             } else if (array.charAt(i) == '(') {
-                --counter;
+                ++counter;
                 answer.append(array.charAt(i));
             }
             if (counter == 0) {
