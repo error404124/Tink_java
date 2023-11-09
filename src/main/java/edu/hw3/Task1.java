@@ -8,7 +8,7 @@ public class Task1 {
 
     public static String atbash(String str) {
         char[] copyArray = str.toCharArray();
-        StringBuilder answer = new StringBuilder(ALPHABET);
+        StringBuilder answer = new StringBuilder(str.length());
         for (char symbol : copyArray) {
             if (Character.isLetter(symbol)) {
                 if (Character.isUpperCase(symbol)) {

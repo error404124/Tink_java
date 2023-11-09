@@ -1,5 +1,7 @@
 package edu.hw3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -10,21 +12,33 @@ public class Task5 {
     private Task5() {
     }
 
-    public static List<Person> parseContacts(List<Person> persons, String condition) {
+    public static List<Person> parseContacts(String[] persons, String condition) {
         if (persons == null) {
             return null;
         }
-        persons.sort(new PersonComaparator());
-        if (Objects.equals(condition, "ASC")) {
-            return persons;
-        } else if (Objects.equals(condition, "DESC")) {
-            return persons.reversed();
-        } else {
-            return null;
+
+        List<Person> personList = convertToPersonList(persons);
+
+        personList.sort(new PersonComparator());
+
+        if (Objects.equals(condition, "DESC")) {
+            personList.sort(new PersonComparator().reversed());
         }
+
+        return personList;
     }
 
-    public static class PersonComaparator implements Comparator<Person> {
+    private static List<Person> convertToPersonList(String[] persons) {
+        List<Person> personList = new ArrayList<>(persons.length);
+
+        for (String personStr : persons) {
+            personList.add(new Person(personStr));
+        }
+
+        return personList;
+    }
+
+    public static class PersonComparator implements Comparator<Person> {
         public int compare(Person person1, Person person2) {
             String[] str1 = person1.toString().split(SPACE);
             String[] str2 = person2.toString().split(SPACE);
@@ -41,6 +55,6 @@ public class Task5 {
         }
     }
 
-    record Person(String fullName) {
+    public static record Person(String fullName) {
     }
 }

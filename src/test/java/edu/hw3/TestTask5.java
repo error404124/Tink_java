@@ -8,12 +8,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class TestTask5 {
     @Test
     void parseContactsTest1() {
-        List<Task5.Person> persons = Arrays.asList(
-            new Task5.Person("John Locke"),
-            new Task5.Person("Thomas Aquinas"),
-            new Task5.Person("David Hume"),
-            new Task5.Person("Rene Descartes")
-        );
+        String[] persons = {"John Locke","Thomas Aquinas", "David Hume", "Rene Descartes"};
         List<Task5.Person> answer = Arrays.asList(
             new Task5.Person("Thomas Aquinas"),
             new Task5.Person("Rene Descartes"),
@@ -25,11 +20,7 @@ public class TestTask5 {
 
     @Test
     void parseContactsTest2() {
-        List<Task5.Person> persons = Arrays.asList(
-            new Task5.Person("Paul Erdos"),
-            new Task5.Person("Leonhard Euler"),
-            new Task5.Person("Carl Gauss")
-        );
+        String[] persons = {"Paul Erdos","Leonhard Euler", "Carl Gauss"};
         List<Task5.Person> answer = Arrays.asList(
             new Task5.Person("Carl Gauss"),
             new Task5.Person("Leonhard Euler"),
@@ -40,14 +31,14 @@ public class TestTask5 {
 
     @Test
     void parseContactsTest3() {
-        List<Task5.Person> persons = Arrays.asList(new Task5.Person(""));
+        String[] persons = {""};
         List<Task5.Person> answer = Arrays.asList(new Task5.Person(""));
         assertThat(answer).isEqualTo(Task5.parseContacts(persons, "DESC"));
     }
 
     @Test
     void parseContactsTest4() {
-        List<Task5.Person> persons = null;
+        String[] persons = null;
         List<Task5.Person> answer = null;
         assertThat(answer).isEqualTo(Task5.parseContacts(persons, "DESC"));
     }
