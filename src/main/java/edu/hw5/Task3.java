@@ -32,6 +32,7 @@ public class Task3 {
         }
     }
 
+    @SuppressWarnings("ReturnCount")
     private static Optional<LocalDate> parse3(String str) {
         if (str.equals("tomorrow")) {
             return Optional.of(LocalDate.now().plusDays(1));
@@ -59,6 +60,7 @@ public class Task3 {
         }
     }
 
+    @SuppressWarnings("ReturnCount")
     public static Optional<LocalDate> parseData(String str) {
         if (parse1(str).isPresent()) {
             return parse1(str);
@@ -71,9 +73,4 @@ public class Task3 {
         }
         return Optional.empty();
     }
-
-    public static void main(String[] args) {
-        System.out.println(parseData("asdf"));
-    }
-
 }
