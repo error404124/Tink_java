@@ -17,7 +17,7 @@ public class FunctionTest {
         Animal d = new Animal("d", Animal.Type.DOG, Animal.Sex.M, 1, 6, 1, true);
         List<Animal> animalList = List.of(a, b, c, d);
         String answer =
-            "[Animal[name=b, type=CAT, sex=F, age=1, height=20, weight=1, bites=true], Animal[name=a, type=DOG, sex=F, age=1, height=10, weight=1, bites=true], Animal[name=d, type=DOG, sex=M, age=1, height=6, weight=1, bites=true], Animal[name=c, type=SPIDER, sex=F, age=1, height=1, weight=1, bites=true]]";
+            "[Animal[name=c, type=SPIDER, sex=F, age=1, height=1, weight=1, bites=true], Animal[name=d, type=DOG, sex=M, age=1, height=6, weight=1, bites=true], Animal[name=a, type=DOG, sex=F, age=1, height=10, weight=1, bites=true], Animal[name=b, type=CAT, sex=F, age=1, height=20, weight=1, bites=true]]";
         assertThat(answer).isEqualTo(sortHeight(animalList).toString());
     }
 
