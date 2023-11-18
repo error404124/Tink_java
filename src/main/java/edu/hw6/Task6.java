@@ -10,16 +10,15 @@ public class Task6 {
 
     }
 
-    public static String checkPort(String protocol, int port){
-        try{
-            if ("TCP".equals(protocol)){
+    public static String checkPort(String protocol, int port) {
+        try {
+            if ("TCP".equals(protocol)) {
                 ServerSocket serverSocket = new ServerSocket(port);
                 serverSocket.setReuseAddress(true);
                 serverSocket.bind(new InetSocketAddress("localhost", port));
                 serverSocket.close();
                 return protocol + "\t   " + port + "\t  Свободен";
-            }
-            else if ("UDP".equals(protocol)){
+            } else if ("UDP".equals(protocol)) {
                 DatagramSocket datagramSocket = new DatagramSocket(port);
                 datagramSocket.close();
                 return protocol + "\t" + port + "\tСвободен";
@@ -28,12 +27,5 @@ public class Task6 {
             return protocol + "\t" + port + "\tЗанят";
         }
         return null;
-    }
-    public static void main(String[] args) {
-        String resultTCP = Task6.checkPort("TCP", 8080);
-        String resultUDP = Task6.checkPort("UDP", 8080);
-
-        System.out.println(resultTCP);
-        System.out.println(resultUDP);
     }
 }
