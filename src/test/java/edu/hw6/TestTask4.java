@@ -17,6 +17,7 @@ public class TestTask4 {
             Files.deleteIfExists(tempFile);
         }
     }
+
     @Test
     void testOutputStreamComposition2() throws IOException {
         Path tempFile = Files.createTempFile("test", ".txt");
