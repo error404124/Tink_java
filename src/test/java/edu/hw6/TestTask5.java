@@ -6,13 +6,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class TestTask5 {
     @Test
-    void test1(){
-        long[] topStories = Task5.HackerNews.hackerNewsTopStories();
-        int answer = 38320698;
-        assertThat(answer).isEqualTo(topStories[0]);
-    }
-    @Test
-    void test2() throws URISyntaxException, IOException, InterruptedException {
+    void test1() throws URISyntaxException, IOException, InterruptedException {
         long[] topStories = Task5.HackerNews.hackerNewsTopStories();
         long newsId = 38320698;
         String answer = Task5.HackerNews.news(newsId);
