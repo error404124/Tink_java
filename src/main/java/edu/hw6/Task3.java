@@ -47,5 +47,10 @@ public class Task3 {
             return path -> accept(path) && other.accept(path);
         }
 
+        DirectoryStream.Filter<Path> filter = regularFile
+            .and(readable)
+            .and(largerThan(100))
+            .and(globMatches("*.txt"))
+            .and(regexContains("75"));
     }
 }
