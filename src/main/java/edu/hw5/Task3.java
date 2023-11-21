@@ -60,16 +60,18 @@ public class Task3 {
         }
     }
 
-    @SuppressWarnings("ReturnCount")
+    @SuppressWarnings("MagicNumber")
     public static Optional<LocalDate> parseData(String str) {
-        if (parse1(str).isPresent()) {
-            return parse1(str);
-        } else if (parse2(str).isPresent()) {
-            return parse2(str);
-        } else if (parse3(str).isPresent()) {
-            return parse3(str);
-        } else if (parse4(str).isPresent()) {
-            return parse4(str);
+        Optional<LocalDate>[] parseStr = new Optional[4];
+        parseStr[0] = parse1(str);
+        parseStr[1] = parse2(str);
+        parseStr[2] = parse3(str);
+        parseStr[3] = parse4(str);
+
+        for (var parseDates : parseStr) {
+            if (parseDates.isPresent()) {
+                return parseDates;
+            }
         }
         return Optional.empty();
     }

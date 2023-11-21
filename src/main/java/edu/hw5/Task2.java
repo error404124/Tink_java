@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("MagicNumber")
 public class Task2 {
@@ -12,8 +13,8 @@ public class Task2 {
 
     }
 
-    public static ArrayList<LocalDate> allFriday13(int year) {
-        ArrayList<LocalDate> dates = new ArrayList<>();
+    public static List<LocalDate> allFriday13(int year) {
+        List<LocalDate> dates = new ArrayList<>();
         LocalDate date = LocalDate.of(year, Month.JANUARY, 13);
         while (date.getYear() == year) {
             if (date.getDayOfWeek() == DayOfWeek.FRIDAY) {
