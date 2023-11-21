@@ -28,35 +28,35 @@ public class TestTask3 {
     @Test
     void parseDataTest4() {
         String str = "today";
-        String answer = "Optional[2023-11-22]";
+        String answer = "Optional[2023-11-21]";
         assertThat(answer).isEqualTo(Task3.parseData(str).toString());
     }
 
     @Test
     void parseDataTest5() {
         String str = "tomorrow";
-        String answer = "Optional[2023-11-23]";
+        String answer = "Optional[2023-11-22]";
         assertThat(answer).isEqualTo(Task3.parseData(str).toString());
     }
 
     @Test
     void parseDataTest6() {
         String str = "yesterday";
-        String answer = "Optional[2023-11-21]";
+        String answer = "Optional[2023-11-20]";
         assertThat(answer).isEqualTo(Task3.parseData(str).toString());
     }
 
     @Test
     void parseDataTest7() {
         String str = "1 day ago";
-        String answer = "Optional[2023-11-21]";
+        String answer = "Optional[2023-11-20]";
         assertThat(answer).isEqualTo(Task3.parseData(str).toString());
     }
 
     @Test
     void parseDataTest8() {
         String str = "10 days ago";
-        String answer = "Optional[2023-11-12]";
+        String answer = "Optional[2023-11-11]";
         assertThat(answer).isEqualTo(Task3.parseData(str).toString());
     }
 
