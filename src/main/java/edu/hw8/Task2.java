@@ -3,6 +3,7 @@ package edu.hw8;
 import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.stream.Collectors;
 
 @SuppressWarnings({"MagicNumber"})
 public class Task2 {
@@ -31,8 +32,10 @@ public class Task2 {
             }
             Thread.sleep(1000);
         }
-
-        return Arrays.toString(results);
+        return Arrays.stream(results)
+            .sorted()
+            .map(String::valueOf)
+            .collect(Collectors.joining(", ", "[", "]"));
     }
 
     public interface ThreadPool extends AutoCloseable {
@@ -46,7 +49,6 @@ public class Task2 {
         private final Thread[] threads;
         private final BlockingQueue<Runnable> tasks;
         private final int threadCount;
-        private volatile boolean shutdownRequested = false;
 
         public FixedThreadPool(int threadCount) {
             this.threads = new Thread[threadCount];
@@ -60,9 +62,6 @@ public class Task2 {
                     try {
                         while (true) {
                             Runnable task = tasks.take();
-                            if (task == null) {
-                                break; // выход при получении специальной задачи
-                            }
                             task.run();
                         }
                     } catch (InterruptedException e) {
@@ -75,9 +74,7 @@ public class Task2 {
 
         @Override
         public void execute(Runnable runnable) throws InterruptedException {
-            if (!shutdownRequested) {
-                tasks.put(runnable);
-            }
+            tasks.put(runnable);
         }
 
         @Override
