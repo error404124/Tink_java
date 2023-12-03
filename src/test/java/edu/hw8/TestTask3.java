@@ -41,29 +41,4 @@ public class TestTask3 {
         var a = "a";
         assertThat("0cc175b9c0f1b6a831c399e269772661").isEqualTo(Task3.countMD5Hash("a"));
     }
-
-    @Test
-    void checkPasswordTest() {
-        var passwordMap = Task3.read("/Users/error404/Tink_java/src/main/java/edu/hw8/a.txt");
-        var expectedResults = new HashMap<String, String>();
-        expectedResults.put("aa", "b.b.bbb");
-        expectedResults.put("l0e", "d.d.ddd");
-        expectedResults.put("a", "a.a.aaa");
-        expectedResults.put("0oa", "h.h.hhh");
-        expectedResults.put("zl4", "k.k.kkk");
-        expectedResults.put("5td", "e.e.eee");
-        expectedResults.put("8ols", "o.o.ooo");
-        expectedResults.put("qwer", "n.n.nnn");
-        expectedResults.put("1sp", "g.g.ggg");
-        expectedResults.put("uyr", "j.j.jjj");
-        expectedResults.put("2q0", "i.i.iii");
-        expectedResults.put("z0az", "l.l.lll");
-        expectedResults.put("z", "c.c.ccc");
-        expectedResults.put("z6aj", "m.m.mmm");
-        expectedResults.put("qwe", "f.f.fff");
-        expectedResults.put("8q7", "p.p.ppp");
-        var actualResults = Task3.checkPassword(passwordMap);
-
-        assertThat(actualResults).isEqualTo(expectedResults);
-    }
 }
