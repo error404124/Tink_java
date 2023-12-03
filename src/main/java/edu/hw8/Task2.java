@@ -1,6 +1,7 @@
 package edu.hw8;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.stream.Collectors;
@@ -33,6 +34,7 @@ public class Task2 {
             Thread.sleep(1000);
         }
         return Arrays.stream(results)
+            .filter(Objects::nonNull)
             .sorted()
             .map(String::valueOf)
             .collect(Collectors.joining(", ", "[", "]"));
