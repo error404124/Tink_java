@@ -64,5 +64,4 @@ public class Task5 {
             return newsTitle;
         }
     }
-
 }
