@@ -16,17 +16,21 @@ public class Task5 {
     }
 
     public static class HackerNews {
+
+        private static HttpResponse<String> sendHttpRequest(String url) throws URISyntaxException, IOException, InterruptedException {
+            HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(url))
+                .GET()
+                .build();
+
+            return HttpClient.newBuilder()
+                .build()
+                .send(request, HttpResponse.BodyHandlers.ofString());
+        }
+
         public static long[] hackerNewsTopStories() {
             try {
-                HttpRequest request = HttpRequest.newBuilder()
-                    .uri(new URI("https://hacker-news.firebaseio.com/v0/topstories.json"))
-                    .GET()
-                    .build();
-
-                HttpResponse<String> response = HttpClient.newBuilder()
-                    .build()
-                    .send(request, HttpResponse.BodyHandlers.ofString());
-
+                HttpResponse<String> response = sendHttpRequest("https://hacker-news.firebaseio.com/v0/topstories.json");
                 String responseBody = response.body();
 
                 String[] storyIds = responseBody.replace("[", "")
@@ -45,14 +49,7 @@ public class Task5 {
 
         public static String news(long id) throws URISyntaxException, IOException, InterruptedException {
             String url = "https://hacker-news.firebaseio.com/v0/item/" + id + ".json";
-            HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(url))
-                .GET()
-                .build();
-
-            HttpResponse<String> response = HttpClient.newBuilder()
-                .build()
-                .send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = sendHttpRequest(url);
 
             String responseBody = response.body();
             String newsTitle = "";
