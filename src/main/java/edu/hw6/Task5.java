@@ -17,7 +17,8 @@ public class Task5 {
 
     public static class HackerNews {
 
-        private static HttpResponse<String> sendHttpRequest(String url) throws URISyntaxException, IOException, InterruptedException {
+        private static HttpResponse<String> sendHttpRequest(String url)
+            throws URISyntaxException, IOException, InterruptedException {
             HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(url))
                 .GET()
@@ -30,7 +31,8 @@ public class Task5 {
 
         public static long[] hackerNewsTopStories() {
             try {
-                HttpResponse<String> response = sendHttpRequest("https://hacker-news.firebaseio.com/v0/topstories.json");
+                HttpResponse<String> response =
+                    sendHttpRequest("https://hacker-news.firebaseio.com/v0/topstories.json");
                 String responseBody = response.body();
 
                 String[] storyIds = responseBody.replace("[", "")
@@ -62,4 +64,5 @@ public class Task5 {
             return newsTitle;
         }
     }
+
 }
